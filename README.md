@@ -83,9 +83,8 @@ The first attempt led to a race condition, causing the rendered image to be inco
 ### Second Attempt with Multithreading:
 ![Final Result](https://github.com/cccccz/RayTracing/assets/60713799/f0f4196d-32ed-4f07-b64c-e94622ff36bf)
 
-my super hard working cpu:
-![image](https://github.com/cccccz/RayTracing/assets/60713799/fe4c2834-0246-44ce-acb0-2fe7c7ddfe45)
-
+### To Be Continued
+It's been a fun weekend journey to me and I think I want to explore more.
 
 
 
