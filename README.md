@@ -78,8 +78,7 @@ The final scene was complex and rendering times were significant with the initia
 
 The first attempt led to a race condition, causing the rendered image to be incorrect.
 
-![First Attempt](https://github.com/cccccz/RayTracing/assets/60713799/924d7bb1-8c4d-4811-9c09-
-
+![First Attempt](https://github.com/cccccz/RayTracing/assets/60713799/10231e97-4f32-4637-a94d-21b5314e54c0)
 
 ### Second Attempt with Multithreading:
 ![Final Result](https://github.com/cccccz/RayTracing/assets/60713799/f0f4196d-32ed-4f07-b64c-e94622ff36bf)
