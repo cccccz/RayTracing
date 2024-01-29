@@ -72,7 +72,7 @@ Adjusting the depth of field through different angles to simulate camera lens ef
 
 ## Final Scene Rendering
 
-The final scene was complex and rendering times were significant with the initial code. To manage this, I reduced the sample number to 10 and employed multi-threaded CPU rendering. Here are the results:
+The final scene was complex and rendering times were significant with the initial code. To manage this, I employed multi-threaded CPU rendering. Here are the results:
 
 ### First Attempt with Multithreading
 
