@@ -12,3 +12,11 @@ Metal
 
 With simple fuzzy effect
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/a9813bb8-6af2-436f-8a2c-b7ce318615dd)
+
+glass with some refraction
+![image](https://github.com/cccccz/RayTracing/assets/60713799/846f3ea9-7d67-4b30-a3e5-ee32c8475169)
+
+hollow glass sphere using negative radius, did you know that negative radius does not change the
+geometry of the sphere but it outputs inverted(inside out) normals?
+![image](https://github.com/cccccz/RayTracing/assets/60713799/31e345f5-07db-4525-b92c-0d68b18cf794)
+
