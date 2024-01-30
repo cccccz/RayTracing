@@ -84,7 +84,16 @@ The first attempt led to a race condition, causing the rendered image to be inco
 ![Final Result](https://github.com/cccccz/RayTracing/assets/60713799/f0f4196d-32ed-4f07-b64c-e94622ff36bf)
 
 ### To Be Continued
-It's been a fun weekend journey to me and I think I want to explore more.
+It's been a fun weekend journey to me and I think I want to explore more(2024-01-28).
+
+### Space Time Ray Tracing and Motion Blur
+![image](https://github.com/cccccz/RayTracing/assets/60713799/e1aec6fb-e39b-4d09-acb3-4803af841d76)
+
+### Bounding Volume Hierachies with Axis-Aligned Bounding Boxes
+with BVH and multithreading, this is much faster comparing to the time I spent yesterday.
+![image](https://github.com/cccccz/RayTracing/assets/60713799/b4a72881-2b5f-4e3e-88ee-32d40353210f)
+
+
 
 
 
