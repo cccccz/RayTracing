@@ -97,8 +97,16 @@ With BVH and multithreading, this is much faster comparing to the time I spent y
 Time to sleep, good night(2024-01-30 02:30 a.m). 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/b4a72881-2b5f-4e3e-88ee-32d40353210f)
 
-### Texture Mapping(Lambertian and Solid)
+### Texture Mapping(Lambertian, Solid)
+mapped the checked texture to the ground
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/fd5ffc3b-f286-473e-8b88-0c95101304fc)
+
+### Texture Mapping(Sphereical)
+Mapped the earchmap to a sphere
+![image](https://github.com/cccccz/RayTracing/assets/60713799/fdbcc579-b81c-4da5-a195-64017617c723)
+
+![image](https://github.com/cccccz/RayTracing/assets/60713799/7903ec6e-b638-4a7c-a3af-b89998de780e)
+
 
 
 
