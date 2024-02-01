@@ -97,6 +97,9 @@ With BVH and multithreading, this is much faster comparing to the time I spent y
 Time to sleep, good night(2024-01-30 02:30 a.m). 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/b4a72881-2b5f-4e3e-88ee-32d40353210f)
 
+### Texture Mapping(Lambertian and Solid)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/fd5ffc3b-f286-473e-8b88-0c95101304fc)
+
 
 
 
