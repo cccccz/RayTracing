@@ -104,7 +104,8 @@ mapped the checked texture to the ground
 ### Texture Mapping(Sphereical)
 Mapped the earchmap to a sphere
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/fdbcc579-b81c-4da5-a195-64017617c723)
-
+![image](https://github.com/cccccz/RayTracing/assets/60713799/ea703a49-0473-4fed-8bfe-7754b0f8327f)
+From a different angle
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/7903ec6e-b638-4a7c-a3af-b89998de780e)
 
 
