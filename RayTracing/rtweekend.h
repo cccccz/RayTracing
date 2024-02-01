@@ -44,5 +44,6 @@ inline int random_int(int min, int max) {
 #include "interval.h"
 #include "ray.h"
 #include "vec3.h"
+#include "color.h"
 
 #endif
