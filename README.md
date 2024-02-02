@@ -2,7 +2,11 @@
 
 Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html).[_Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
 
-## Newest Image:
+## Newest Image
+![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
+
+## RayTracing Adventure Log
+The rest of this README is the log of me following along the books listed above.
 
 ## Diffuse Objects
 
@@ -134,6 +138,7 @@ Trick of using dot product to move max and min off lattice points
 ## Making colour proportional to a sin function with the turbulence adjusting the phase
 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
+(2024-02-02 7:24 am)
 
 
 
