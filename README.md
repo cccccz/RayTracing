@@ -111,26 +111,26 @@ From a different angle
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/7903ec6e-b638-4a7c-a3af-b89998de780e)
 
 ### Perlin Noise
-A repeatable fake random pattern hack invented by Ken Perlin.
+## A repeatable fake random pattern hack invented by Ken Perlin.
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/8238bf7a-693c-4c91-b7d1-214aa7a1dd91)
 
-Smoothing using trilinear interpolation using lattice points on the unit cube(of the noise space?)
+## Smoothing using trilinear interpolation using lattice points on the unit cube(of the noise space?)
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/47182fbf-99fa-4b10-bbc0-54458b48b2da)
 
-Hermitian smoothing
+## Hermitian smoothing
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/97a653db-fe30-48f4-acb3-f7b431ce91dd)
 
-Play with a higher frequency noise, but there are blocky artifacts because max and min fall on integer values
+## Play with a higher frequency noise, but there are blocky artifacts because max and min fall on integer values
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/64afb7e7-741a-446c-908e-abd051159552)
 
-Trick of using dot product to move max and min off lattice points
+## Trick of using dot product to move max and min off lattice points
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/ae4f1464-563e-4cc6-afec-adc3b2887f33)
 
-Turbulence created by multiple summed frequencies, camouflage effect
+## Turbulence created by multiple summed frequencies, camouflage effect
 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/9540245a-3687-45e6-a684-13f17eda0ae4)
 
-Making colour proportional to a sin function with the turbulence adjusting the phase
+## Making colour proportional to a sin function with the turbulence adjusting the phase
 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
 
