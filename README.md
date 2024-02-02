@@ -120,10 +120,11 @@ From a different angle
 ## Hermitian smoothing
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/97a653db-fe30-48f4-acb3-f7b431ce91dd)
 
-## Play with a higher frequency noise, but there are blocky artifacts because max and min fall on integer values
+## Artifacts of Perlin after smoothing
+Blocky artifacts because max and min fall on integer values
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/64afb7e7-741a-446c-908e-abd051159552)
 
-## Trick of using dot product to move max and min off lattice points
+Trick of using dot product to move max and min off lattice points
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/ae4f1464-563e-4cc6-afec-adc3b2887f33)
 
 ## Turbulence created by multiple summed frequencies, camouflage effect
