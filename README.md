@@ -1,6 +1,12 @@
 # Ray Tracing Exploration
 
-Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html).
+Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html).[_Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
+
+## Newest Image
+![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
+
+## RayTracing Adventure Log
+The rest of this README is the log of me following along the books listed above.
 
 ## Diffuse Objects
 
@@ -83,19 +89,60 @@ The first attempt led to a race condition, causing the rendered image to be inco
 ### Second Attempt with Multithreading:
 ![Final Result](https://github.com/cccccz/RayTracing/assets/60713799/f0f4196d-32ed-4f07-b64c-e94622ff36bf)
 
-### To Be Continued
+## To Be Continued
 It's been a fun weekend journey to me and I think I want to explore more(2024-01-28).
 
-### The Next Week
+## The Next Week
 Exploring the concepts of Ray Tracing following the book [_Ray Tracing: The Next Week_](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
 
-### Space Time Ray Tracing and Motion Blur
+## Space Time Ray Tracing and Motion Blur
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/e1aec6fb-e39b-4d09-acb3-4803af841d76)
 
-### Bounding Volume Hierachies with Axis-Aligned Bounding Boxes
+## Bounding Volume Hierachies with Axis-Aligned Bounding Boxes
 With BVH and multithreading, this is much faster comparing to the time I spent yesterday.
 Time to sleep, good night(2024-01-30 02:30 a.m). 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/b4a72881-2b5f-4e3e-88ee-32d40353210f)
+
+## Texture Mapping(Lambertian, Solid)
+mapped the checked texture to the ground
+![image](https://github.com/cccccz/RayTracing/assets/60713799/fd5ffc3b-f286-473e-8b88-0c95101304fc)
+
+### Texture Mapping(Sphereical)
+Mapped the earchmap to a sphere
+![image](https://github.com/cccccz/RayTracing/assets/60713799/fdbcc579-b81c-4da5-a195-64017617c723)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/ea703a49-0473-4fed-8bfe-7754b0f8327f)
+From a different angle
+![image](https://github.com/cccccz/RayTracing/assets/60713799/7903ec6e-b638-4a7c-a3af-b89998de780e)
+
+### Perlin Noise
+## A repeatable fake random pattern hack invented by Ken Perlin.
+![image](https://github.com/cccccz/RayTracing/assets/60713799/8238bf7a-693c-4c91-b7d1-214aa7a1dd91)
+
+## Smoothing using trilinear interpolation using lattice points on the unit cube(of the noise space?)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/47182fbf-99fa-4b10-bbc0-54458b48b2da)
+
+## Hermitian smoothing
+![image](https://github.com/cccccz/RayTracing/assets/60713799/97a653db-fe30-48f4-acb3-f7b431ce91dd)
+
+## Artifacts of Perlin after smoothing
+Blocky artifacts because max and min fall on integer values
+![image](https://github.com/cccccz/RayTracing/assets/60713799/64afb7e7-741a-446c-908e-abd051159552)
+
+Trick of using dot product to move max and min off lattice points
+![image](https://github.com/cccccz/RayTracing/assets/60713799/ae4f1464-563e-4cc6-afec-adc3b2887f33)
+
+## Turbulence created by multiple summed frequencies, camouflage effect
+
+![image](https://github.com/cccccz/RayTracing/assets/60713799/9540245a-3687-45e6-a684-13f17eda0ae4)
+
+## Making colour proportional to a sin function with the turbulence adjusting the phase
+
+![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
+(2024-02-02 7:24 am)
+
+
+
+
 
 
 
