@@ -5,7 +5,7 @@ Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One We
 ## Newest Image
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
 
-## RayTracing Adventure Log
+# RayTracing Adventure Log
 The rest of this README is the log of me following along the books listed above.
 
 ## Diffuse Objects
@@ -139,6 +139,59 @@ Trick of using dot product to move max and min off lattice points
 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
 (2024-02-02 7:24 am)
+
+## Color Mixing
+![image](https://github.com/cccccz/RayTracing/assets/60713799/b91bd6d0-9b54-4d93-a342-f1e4ab756fb2)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/d34543fb-8032-4482-8532-3f4967211c11)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/3c85daa5-415d-4aef-ae3d-8f47a3907b64)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/4b4d5b7b-86de-4000-afe8-be8603382d6c)
+
+## Noise with different frequencies and magnitudes
+![image](https://github.com/cccccz/RayTracing/assets/60713799/ac8e56a0-3954-4313-ab28-f6868ac59a38)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/15aaade3-2e10-4042-911b-bb1edea7148f)
+
+# Colors get too dark when addition is not normalized(by 255)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/1fc6120a-95b1-4ae6-aac5-bb03b6417a89)
+
+## Mapped my cat to a sphere, she is so cute T^T
+![image](https://github.com/cccccz/RayTracing/assets/60713799/d3b71687-d2e8-44da-8e45-b6b254768917)
+
+## Introduced Quads(Quadrilaterals... I think I spelled it right)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/4f39f0e0-9a2c-4cbc-bd43-759f383022e3)
+
+## Diffuse Light
+I didn't know that we could turn normal object to lights by making them "emissive". It was a neat trick.
+![image](https://github.com/cccccz/RayTracing/assets/60713799/94684208-6ad8-42ab-ac2c-a881ea4e1eba)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/a0044a43-ef1f-4e4b-9c6a-7f69082b8af5)
+
+# And Yes Light can have color preferences
+![image](https://github.com/cccccz/RayTracing/assets/60713799/d44ec6be-718a-4200-87ea-6f6923b9a8a2)
+
+## Cornell Box
+My first Cornell Box
+![image](https://github.com/cccccz/RayTracing/assets/60713799/32b112a5-9c2e-4207-b48e-d9d9589fb307)
+
+# The book says the scene is noisy because the light source is too small so I tried a bigger one
+![image](https://github.com/cccccz/RayTracing/assets/60713799/333d3547-ad23-475c-80ad-5c07ca092369)
+
+# Cornell Box Illuminated by a super red light source
+![image](https://github.com/cccccz/RayTracing/assets/60713799/03f510a4-41b7-4909-a235-26e35d409abf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
