@@ -44,10 +44,10 @@ public:
                     ];
 
 
-        return trilinear_interp(c, u, v, w);
+        return perlin_interp(c, u, v, w);
     }
 
-    double turb(const point3& p, int depth = 7) const {
+    double turb(const point3& p, int depth) const {
         auto accum = 0.0;
         auto temp_p = p;
         auto weight = 1.0;
@@ -89,7 +89,7 @@ private:
         }
     }
 
-    static double trilinear_interp(vec3 c[2][2][2], double u, double v, double w) {
+    static double perlin_interp(vec3 c[2][2][2], double u, double v, double w) {
         auto uu = u * u * (3 - 2 * u);
         auto vv = v * v * (3 - 2 * v);
         auto ww = w * w * (3 - 2 * w);
