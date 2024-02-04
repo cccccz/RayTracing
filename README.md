@@ -3,7 +3,7 @@
 Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html).[_Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
 
 ## Newest Image
-![image](https://github.com/cccccz/RayTracing/assets/60713799/2d1433d2-c490-4e0f-bd80-eeac6375c4a5)
+![image](https://github.com/cccccz/RayTracing/assets/60713799/cf3b86c2-5871-41d1-8a94-1cdd4ee061d7)
 
 # RayTracing Adventure Log
 The rest of this README is the log of me following along the books listed above.
@@ -182,7 +182,13 @@ Trick of using dot product to move max and min off lattice points
 ### Cornell Box Illuminated by a super red light source
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/03f510a4-41b7-4909-a235-26e35d409abf)
 
+![image](https://github.com/cccccz/RayTracing/assets/60713799/57c334a7-1755-4865-8f6f-cee384e7e445)
 
+![image](https://github.com/cccccz/RayTracing/assets/60713799/18ba6581-d0b5-4300-b213-396f47dc824b)
+
+![image](https://github.com/cccccz/RayTracing/assets/60713799/505fd71e-cc53-4a75-9036-2620364573f7)
+
+![image](https://github.com/cccccz/RayTracing/assets/60713799/cf1aab6a-8b3d-4406-a4b4-87baaa14548f)
 
 
 
