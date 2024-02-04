@@ -28,52 +28,70 @@ public:
     double defocus_angle = 0; // Variation angle of rays through each pixel
     double focus_dist = 10;     // Distance from camera lookfrom pint to plane of perfect focus
 
+    //void render(const hittable& world) {
+    //    initialize();
+
+    //    std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+
+    //    for (int j = 0; j < image_height; j++) {
+    //        std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
+    //        for (int i = 0; i < image_width; i++) {
+    //            color pixel_color(0, 0, 0);
+    //            for (int sample = 0; sample < samples_per_pixel; sample++) {
+    //                ray r = get_ray(i, j);
+    //                pixel_color += ray_color(r, max_depth, world);
+    //            }
+    //            write_color(std::cout, pixel_color, samples_per_pixel);
+    //        }
+    //    }
+
+    //    std::clog << "\rDone.                 \n";
+    //}
     void render(const hittable& world) {
         initialize();
 
-        // Buffer to store the pixel data
+        const int tilesize = 16;
+        const int numxtiles = image_width / tilesize;
+        const int numytiles = image_height / tilesize;
+
         std::vector<color> framebuffer(image_width * image_height);
 
-        // Lambda function for rendering a portion of the scene
-        auto render_scanline = [&](int start, int end) {
-            for (int j = start; j < end; ++j) {
-                for (int i = 0; i < image_width; ++i) {
-                    color pixel_color(0, 0, 0);
-                    for (int sample = 0; sample < samples_per_pixel; ++sample) {
-                        ray r = get_ray(i, j);
-                        pixel_color += ray_color(r, max_depth, world);
-                    }
-                    framebuffer[j * image_width + i] = pixel_color / samples_per_pixel;
+        // Render tiles
+        for (int tile = 0; tile < numxtiles * numytiles; ++tile) {
+            // Tile offset
+            int ia = tilesize * (tile % numxtiles);
+            int ja = tilesize * (tile / numxtiles);
+
+            // For every pixel in this tile, compute color
+            for (int j = 0; j < tilesize; ++j) {
+                for (int i = 0; i < tilesize; ++i) {
+                    int x = ia + i;
+                    int y = ja + j;
+                    if (x >= image_width || y >= image_height) continue; // Skip pixels outside the image bounds
+                    color pixel_color = compute_color(x, y, world);
+                    framebuffer[y * image_width + x] = pixel_color;
                 }
             }
-            };
-
-        // Determine the number of threads
-        unsigned num_threads = std::thread::hardware_concurrency();
-        std::vector<std::thread> threads(num_threads);
-
-        // Determine the number of scanlines per thread
-        int scanlines_per_thread = image_height / num_threads;
-
-        // Launch threads
-        for (unsigned t = 0; t < num_threads; ++t) {
-            int start = t * scanlines_per_thread;
-            int end = (t == num_threads - 1) ? image_height : (t + 1) * scanlines_per_thread;
-            threads[t] = std::thread(render_scanline, start, end);
-        }
-
-        // Join threads
-        for (auto& thread : threads) {
-            thread.join();
         }
 
         // Output the framebuffer
         std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
-        for (const auto& pixel_color : framebuffer) {
-            write_color(std::cout, pixel_color, 1);
+        for (int j = 0; j < image_height; ++j) {
+            for (int i = 0; i < image_width; ++i) {
+                write_color(std::cout, framebuffer[j * image_width + i], samples_per_pixel);
+            }
         }
 
-        std::clog << "\rDone.                 \n";
+        std::clog << "\rDone.\n";
+    }
+
+    color compute_color(int i, int j, const hittable& world) {
+        color pixel_color(0, 0, 0);
+        for (int s = 0; s < samples_per_pixel; ++s) {
+            ray r = get_ray(i, j);
+            pixel_color += ray_color(r, max_depth, world);
+        }
+        return pixel_color;
     }
 
 private:
