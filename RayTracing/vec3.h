@@ -5,6 +5,9 @@
 #include <iostream>
 
 using std::sqrt;
+namespace rtVec3 {
+
+}
 
 class vec3 {
 public:
