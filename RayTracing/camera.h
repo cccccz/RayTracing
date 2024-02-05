@@ -7,9 +7,23 @@
 #include "hittable.h"
 #include "material.h"
 #include <vector>
-#include <future>
 
 #include <iostream>
+#include <Windows.h>
+
+class camera;
+
+typedef struct
+{
+    long    tileID;
+    HANDLE  barrier;
+    std::vector<color>* framebuffer;
+    int iw;
+    int ih;
+    const hittable& world;
+    camera* cam;
+}TData;
+
 
 class camera {
 public:
@@ -27,26 +41,54 @@ public:
 
     double defocus_angle = 0; // Variation angle of rays through each pixel
     double focus_dist = 10;     // Distance from camera lookfrom pint to plane of perfect focus
+    friend DWORD WINAPI doRender(void* vdata);
+    static DWORD WINAPI doRender(void* vdata);
 
-    //void render(const hittable& world) {
-    //    initialize();
+    //-----------------------------------------------------
+    // render image
+    //-----------------------------------------------------
+    void renderImage(const hittable& world)
+    {
+        initialize();
+        // get number of CPUs available
+        SYSTEM_INFO si;
+        GetSystemInfo(&si);
+        const int numCpus = min(si.dwNumberOfProcessors, 256);
+        std::vector<color> framebuffer(image_width * image_height);
 
-    //    std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+        // data for worker threads
+        __declspec(align(32)) TData data = {
+            0,                                         // tile id/counter
+            CreateSemaphore(0, numCpus, numCpus, 0), // create barrier
+            &framebuffer, image_width, image_height, world, this           // image
+        };
 
-    //    for (int j = 0; j < image_height; j++) {
-    //        std::clog << "\rScanlines remaining: " << (image_height - j) << ' ' << std::flush;
-    //        for (int i = 0; i < image_width; i++) {
-    //            color pixel_color(0, 0, 0);
-    //            for (int sample = 0; sample < samples_per_pixel; sample++) {
-    //                ray r = get_ray(i, j);
-    //                pixel_color += ray_color(r, max_depth, world);
-    //            }
-    //            write_color(std::cout, pixel_color, samples_per_pixel);
-    //        }
-    //    }
+        // launch worker threads
+        HANDLE th[256];
+        for (int i = 0; i < numCpus; i++)
+            th[i] = CreateThread(0, 0, doRender, &data, 0, 0);
 
-    //    std::clog << "\rDone.                 \n";
-    //}
+        // wait for worker threads to finish
+        WaitForMultipleObjects(numCpus, th, true, INFINITE);
+
+        // destroy threads
+        for (int i = 0; i < numCpus; i++)
+            CloseHandle(th[i]);
+
+        // destroy barrier
+        CloseHandle(data.barrier);
+
+        // Output the framebuffer
+        std::cout << "P3\n" << image_width << ' ' << image_height << "\n255\n";
+        for (int j = 0; j < image_height; ++j) {
+            for (int i = 0; i < image_width; ++i) {
+                write_color(std::cout, framebuffer[j * image_width + i], samples_per_pixel);
+            }
+        }
+
+        std::clog << "\rDone.\n";
+    }
+
     void render(const hittable& world) {
         initialize();
 
@@ -191,5 +233,46 @@ private:
         return color_from_emission + color_from_scatter;
     }
 };
+
+DWORD WINAPI camera::doRender(void* vdata)
+{
+#define TILESIZE 16
+
+    // prep data
+    TData* data = (TData*)vdata;
+    const int width = data->iw;
+    const int height = data->ih;
+
+    const int   numxtiles = width / TILESIZE;
+    const int   numytiles = height / TILESIZE;
+    const int   numtiles = numxtiles * numytiles;
+    //const hittable& world = data->world;
+
+    // synch point
+    WaitForSingleObject(data->barrier, 0);
+
+    // render tiles
+    for (;;)
+    {
+        // get next tile to consume
+        const int tile = InterlockedIncrement(&data->tileID) - 1;
+        if (tile >= numtiles) break;
+
+        // tile offset
+        const int ia = TILESIZE * (tile % numxtiles);
+        const int ja = TILESIZE * (tile / numxtiles);
+
+        // for every pixel in this tile, compute color
+        for (int j = 0; j < TILESIZE; j++)
+            for (int i = 0; i < TILESIZE; i++)
+                data->framebuffer->at(width * (ja + j) + (ia + i)) = data->cam->compute_color(
+                    ia + i, ja + j, data->world);
+    }
+
+    // synch point
+    ReleaseSemaphore(data->barrier, 1, NULL);
+
+    return 1;
+}
 
 #endif
