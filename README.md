@@ -3,7 +3,8 @@
 Exploring the concepts of Ray Tracing following the book [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html).[_Ray Tracing: The Next Week](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
 
 ## Newest Image
-![image](https://github.com/cccccz/RayTracing/assets/60713799/cf3b86c2-5871-41d1-8a94-1cdd4ee061d7)
+![sweetdream](https://github.com/cccccz/RayTracing/assets/60713799/086e78f0-4979-4a4f-8d86-5ce66bd550ef)
+
 
 # RayTracing Adventure Log
 The rest of this README is the log of me following along the books listed above.
@@ -190,8 +191,10 @@ Trick of using dot product to move max and min off lattice points
 
 ![image](https://github.com/cccccz/RayTracing/assets/60713799/cf1aab6a-8b3d-4406-a4b4-87baaa14548f)
 
-
-
+## Sweet Dream
+![sweetdream](https://github.com/cccccz/RayTracing/assets/60713799/086e78f0-4979-4a4f-8d86-5ce66bd550ef)
+It took more than 40 mins to render this sweet dream image(using CPU parallelism)
+The perlin texture is not the same, the issue has been there since the perlin noise chapter.
 
 
 
