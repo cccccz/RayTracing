@@ -234,7 +234,7 @@ private:
     }
 };
 
-static unsigned long __stdcall doRender(void* vdata)
+DWORD WINAPI camera::doRender(void* vdata)
 {
 #define TILESIZE 16
 

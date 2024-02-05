@@ -377,12 +377,12 @@ void final_scene(int image_width, int samples_per_pixel, int max_depth) {
 
     cam.defocus_angle = 0;
 
-    cam.render(world);
+    cam.renderImage(world);
 }
 
 
 int main() {
-    switch (10) {
+    switch (9) {
     case 1: random_spheres();           break;
     case 2: two_spheres();              break;
     case 3: earth();                    break;
