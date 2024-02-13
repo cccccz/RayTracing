@@ -254,7 +254,7 @@ void cornell_box() {
 
     cam.defocus_angle = 0;
 
-    cam.render(world);
+    cam.renderImage(world);
 }
 
 void cornell_smoke() {
@@ -382,7 +382,7 @@ void final_scene(int image_width, int samples_per_pixel, int max_depth) {
 
 
 int main() {
-    switch (9) {
+    switch (7) {
     case 1: random_spheres();           break;
     case 2: two_spheres();              break;
     case 3: earth();                    break;

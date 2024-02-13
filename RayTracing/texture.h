@@ -83,11 +83,17 @@ public:
 
     noise_texture(double sc) : scale(sc) {}
 
+    // v4
     color value(double u, double v, const point3& p) const override {
         auto s = scale * p;
-        return color(1, 1, 1) * 0.5 * (1 + sin(s.z() + 10 * noise.turb(s, 7)));
+        return color(1, 1, 1) * 0.5 * (1 + sin(s.z() + 10 * noise.turb(s,7)));
         //return color(0.5, 0.1, 0.5) * noise.turb(s);
     }
+
+    //// v3 noise_texture
+    //virtual color value(double u, double v, const vec3& p) const override {
+    //    return color(1, 1, 1) * 0.5 * (1 + sin(scale * p.z() + 10 * noise.turb(p)));
+    //}
 
 private:
     perlin noise;

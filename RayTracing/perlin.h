@@ -27,8 +27,6 @@ public:
         auto u = p.x() - floor(p.x());
         auto v = p.y() - floor(p.y());
         auto w = p.z() - floor(p.z());
-
-
         auto i = static_cast<int>(floor(p.x()));
         auto j = static_cast<int>(floor(p.y()));
         auto k = static_cast<int>(floor(p.z()));
@@ -39,15 +37,15 @@ public:
                 for (int dk = 0; dk < 2; dk++)
                     c[di][dj][dk] = ranvec[
                         perm_x[(i + di) & 255] ^
-                            perm_y[(j + dj) & 255] ^
-                            perm_z[(k + dk) & 255]
+                        perm_y[(j + dj) & 255] ^
+                        perm_z[(k + dk) & 255]
                     ];
 
 
         return perlin_interp(c, u, v, w);
     }
 
-    double turb(const point3& p, int depth) const {
+    double turb(const point3& p, int depth=7) const {
         auto accum = 0.0;
         auto temp_p = p;
         auto weight = 1.0;
@@ -64,7 +62,6 @@ public:
 private:
     static const int point_count = 256;
     vec3* ranvec;
-    double* ranfloat;
     int* perm_x;
     int* perm_y;
     int* perm_z;
